@@ -4,7 +4,9 @@
       "Bash(cat)",
       "Bash(chmod +x /tmp/update_pages.sh)",
       "Bash(grep -n \"css/style\\\\.css\" \"C:\\\\Users\\\\cyber_test\\\\churchofsaintluke\"/*.html)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(grep -rn \"style\\\\.css\" /c/Users/cyber_test/churchofsaintluke/*.html)",
+      "Bash(grep -rn \"href=\\\\\"css/style\\\\.css\\\\\"\" /c/Users/cyber_test/churchofsaintluke/*.html)"
     ]
   }
 }

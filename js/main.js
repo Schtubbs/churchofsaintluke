@@ -76,11 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
       '.quick-card',
       '.team-card',
       '.sponsor-card',
-      '.footer-col',
-      '.schedule-grid > div',
-      'section.section h2',
-      'section.section p.section-subtitle',
-      '.mass-schedule-box',
     ].join(',');
 
     // Parents whose direct children should stagger

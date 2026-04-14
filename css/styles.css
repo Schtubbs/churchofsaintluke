@@ -700,6 +700,6 @@ footer {
     transform: none !important;
     transition: none !important;
     animation: none !important;
-    width: 60px; /* for gold-rule-reveal */
   }
+  .gold-rule-reveal { width: 60px !important; }
 }
