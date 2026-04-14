@@ -4,205 +4,404 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News & Bulletins | Church of Saint Luke</title>
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/jpeg" href="images/logo.jpg">
   <link rel="apple-touch-icon" href="images/logo.jpg">
   <meta property="og:title" content="News & Bulletins | Church of Saint Luke">
-  <meta property="og:description" content="Stay up to date with news, bulletins, and parish updates from the Church of Saint Luke in Stroudsburg, PA.">
+  <meta property="og:description" content="Stay up to date with parish news, bulletins, and community updates from Church of Saint Luke.">
   <meta property="og:image" content="images/logo.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="images/logo.jpg">
-  <link rel="stylesheet" href="css/styles.css">
+
   <style>
-    /* News-specific styles */
-    .news-tag {
-      display: inline-block;
-      background-color: var(--gold);
-      color: var(--navy);
-      padding: 4px 10px;
-      border-radius: 3px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 12px;
-    }
+    /* NEWS PAGE SPECIFIC STYLES */
 
-    .card {
-      background: white;
-      border-radius: 4px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
-
-    .card--gold-top {
-      border-top: 3px solid var(--gold);
-    }
-
-    .card__image {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card__body {
-      padding: 24px;
-    }
-
-    .card__title {
-      font-family: var(--font-heading);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin: 12px 0 8px;
-      line-height: 1.3;
-    }
-
-    .card__date {
-      color: var(--gray-text);
-      font-size: 0.85rem;
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    .card__text {
-      color: var(--gray-text);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .card__link {
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: color 0.3s ease;
-      display: inline-block;
-    }
-
-    .card__link:hover {
-      color: var(--gold);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
+    .page-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
     }
 
-    .section {
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/bulletins.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(26, 46, 90, 0.5);
+      z-index: 2;
+    }
+
+    .page-hero .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 700px;
+      padding: 0 24px;
+    }
+
+    .page-hero h1 {
+      color: white;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .page-hero p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.8;
+    }
+
+    /* NEWS CARDS GRID */
+    .news-cards-section {
       padding: 80px 0;
-    }
-
-    .section--white {
-      background-color: white;
-    }
-
-    .section--off-white {
       background-color: var(--off-white);
     }
 
-    .section--navy {
-      background: linear-gradient(rgba(15,28,56,0.94), rgba(15,28,56,0.94)), url('images/church.jpg') center/cover no-repeat;
-      color: white;
-    }
-
-    .section-heading {
+    .news-cards-header {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 60px;
     }
 
-    .section-heading h2 {
+    .section-eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
       margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .news-cards-header h2 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
       color: var(--navy);
     }
 
-    .section-heading--white h2 {
+    .news-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(26, 46, 90, 0.08);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .news-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(26, 46, 90, 0.15);
+    }
+
+    .news-card-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .news-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .news-card:hover .news-card-image img {
+      transform: scale(1.08);
+    }
+
+    .news-card-content {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .news-category {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      padding: 6px 12px;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .news-card-headline {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .news-card-date {
+      font-size: 0.85rem;
+      color: var(--gray-text);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .news-card-excerpt {
+      color: var(--gray-text);
+      line-height: 1.7;
+      flex-grow: 1;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .news-card-link {
+      color: var(--gold);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s ease;
+    }
+
+    .news-card-link:hover {
+      gap: 12px;
+    }
+
+    /* BULLETINS SECTION */
+    .bulletins-section {
+      background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+      padding: 80px 0;
       color: white;
     }
 
-    .eyebrow {
-      color: var(--gold);
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+    .bulletins-content {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .bulletins-image {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .bulletins-image img {
+      width: 100%;
+      height: auto;
       display: block;
+    }
+
+    .bulletins-text h2 {
+      color: white;
+      font-size: 2.6rem;
+      margin-bottom: 24px;
+    }
+
+    .bulletins-text p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .bulletin-thumbnail {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 24px;
+      border-radius: 6px;
+      margin-bottom: 32px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .bulletin-thumbnail img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .bulletin-thumbnail-text h3 {
+      color: white;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .bulletin-thumbnail-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* NEWSLETTERS SECTION */
+    .newsletters-section {
+      padding: 80px 0;
+      background-color: white;
+    }
+
+    .newsletters-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .newsletters-header h2 {
+      font-size: 2.8rem;
+      color: var(--navy);
       margin-bottom: 12px;
     }
 
-    .btn-secondary-small {
-      padding: 8px 20px;
-      font-size: 0.85rem;
+    .newsletters-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-bottom: 50px;
     }
 
     .newsletter-card {
-      text-align: center;
-      background: white;
-      border-radius: 4px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(26, 46, 90, 0.12);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .newsletter-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(26, 46, 90, 0.18);
     }
 
-    .newsletter-card .card__image {
-      height: 350px;
-      margin-bottom: 20px;
+    .newsletter-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
     }
 
-    .newsletter-card h3 {
-      margin: 16px 0;
+    .newsletter-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .newsletter-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(26, 46, 90, 0.95), transparent);
+      color: white;
+      padding: 40px 24px 24px;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .cta-center {
+      text-align: center;
+    }
+
+    .cta-center .btn-secondary {
+      border-color: var(--navy);
       color: var(--navy);
     }
 
+    .cta-center .btn-secondary:hover {
+      background-color: var(--navy);
+      color: white;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .grid-3 {
+      .news-cards-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
       }
 
-      .grid-2 {
+      .bulletins-content {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
 
-      .two-col {
+      .newsletters-grid {
         grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 768px) {
-      .grid-3 {
-        grid-template-columns: 1fr;
+      .page-hero h1 {
+        font-size: 2.4rem;
       }
 
-      .section {
-        padding: 60px 0;
+      .page-hero p {
+        font-size: 1.05rem;
       }
+
+      .news-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .news-cards-header h2 {
+        font-size: 2.2rem;
+      }
+
+      .bulletins-text h2 {
+        font-size: 2rem;
+      }
+
+      .newsletters-header h2 {
+        font-size: 2.2rem;
+      }
+
+      .newsletter-title {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* ANIMATION OVERRIDES */
+    .news-card {
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .newsletter-card {
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
     }
   </style>
 </head>
@@ -243,167 +442,169 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="mobile-social">
-      <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">FB</a>
-      <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">IG</a>
-      <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">YT</a>
+      <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook" class="social-icon-link" style="border-color: rgba(26,46,90,0.3); color: var(--navy);">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram" class="social-icon-link" style="border-color: rgba(26,46,90,0.3); color: var(--navy);">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+      </a>
+      <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube" class="social-icon-link" style="border-color: rgba(26,46,90,0.3); color: var(--navy);">
+        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="currentColor"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--navy)"/></svg>
+      </a>
     </div>
   </header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero" style="background: linear-gradient(rgba(10,22,46,0.72), rgba(10,22,46,0.72)), url('images/bulletins.jpg') center/cover no-repeat; height: 380px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative;">
-    <div class="container">
-      <h1 style="color: white; margin-bottom: 20px; font-size: 3rem;">News and Bulletins</h1>
-      <div class="gold-line"></div>
-      <p style="color: white; font-size: 1.2rem; margin-top: 20px;">Stay up to date with parish life</p>
+  <!-- HERO SECTION -->
+  <section class="page-hero">
+    <div class="hero-content">
+      <h1 class="section-heading-reveal">News & Bulletins</h1>
+      <p class="section-sub-reveal">Stay up to date with parish life</p>
     </div>
   </section>
 
-  <!-- FEATURED NEWS -->
-  <section class="section section--white">
+  <!-- FEATURED NEWS CARDS -->
+  <section class="news-cards-section">
     <div class="container">
-      <div class="section-heading">
-        <h2>Latest News</h2>
-        <div class="gold-line"></div>
+      <div class="news-cards-header">
+        <div class="section-eyebrow section-label">Latest Updates</div>
+        <h2 class="section-heading-reveal">Featured News</h2>
       </div>
 
-      <div class="grid-3">
+      <div class="news-cards-grid">
         <!-- Card 1 -->
-        <article class="card card--gold-top">
-          <img src="images/DSC_55062820250414T16_01_56_76129.JPG" alt="Living Stations of the Cross 2025" class="card__image">
-          <div class="card__body">
-            <span class="news-tag">Events</span>
-            <h3 class="card__title">Living Stations of the Cross 2025</h3>
-            <p class="card__date">April 14, 2025</p>
-            <p class="card__text">Students brought the Passion of Christ to life on the streets of Stroudsburg in our annual Living Stations.</p>
-            <a href="#" class="card__link btn-secondary-small">Read More</a>
+        <article class="news-card parish-card">
+          <div class="news-card-image">
+            <img src="images/DSC_55062820250414T16_01_56_76129.JPG" alt="Living Stations of the Cross 2025">
+          </div>
+          <div class="news-card-content">
+            <span class="news-category">Events</span>
+            <h3 class="news-card-headline">Living Stations of the Cross 2025</h3>
+            <p class="news-card-date">April 14, 2025</p>
+            <p class="news-card-excerpt">Students brought the Passion of Christ to life on the streets of Stroudsburg.</p>
+            <a href="#" class="news-card-link">Read More <span>→</span></a>
           </div>
         </article>
 
         <!-- Card 2 -->
-        <article class="card card--gold-top">
-          <img src="images/Iftar202511.JPG" alt="Interfaith Iftar Dinner 2025" class="card__image">
-          <div class="card__body">
-            <span class="news-tag">Community</span>
-            <h3 class="card__title">Interfaith Iftar Dinner 2025</h3>
-            <p class="card__date">2025</p>
-            <p class="card__text">Saint Luke welcomed our Muslim neighbors for an evening of prayer, shared meals, and interfaith dialogue.</p>
-            <a href="#" class="card__link btn-secondary-small">Read More</a>
+        <article class="news-card parish-card">
+          <div class="news-card-image">
+            <img src="images/Iftar202511.JPG" alt="Interfaith Iftar Dinner 2025">
+          </div>
+          <div class="news-card-content">
+            <span class="news-category">Community</span>
+            <h3 class="news-card-headline">Interfaith Iftar Dinner 2025</h3>
+            <p class="news-card-date">April 2025</p>
+            <p class="news-card-excerpt">Saint Luke welcomed our Muslim neighbors for an evening of prayer and shared meals.</p>
+            <a href="#" class="news-card-link">Read More <span>→</span></a>
           </div>
         </article>
 
         <!-- Card 3 -->
-        <article class="card card--gold-top">
-          <img src="images/LentenFlyer2025Page1.jpg" alt="Lenten Fundraiser 2025" class="card__image">
-          <div class="card__body">
-            <span class="news-tag">Giving</span>
-            <h3 class="card__title">Lenten Fundraiser 2025</h3>
-            <p class="card__date">Lent 2025</p>
-            <p class="card__text">Join our annual 40 Cans for 40 Days food drive benefiting local families throughout the Stroudsburg area.</p>
-            <a href="#" class="card__link btn-secondary-small">Read More</a>
+        <article class="news-card parish-card">
+          <div class="news-card-image">
+            <img src="images/LentenFlyer2025Page1.jpg" alt="Lenten Fundraiser 2025">
+          </div>
+          <div class="news-card-content">
+            <span class="news-category">Giving</span>
+            <h3 class="news-card-headline">Lenten Fundraiser 2025</h3>
+            <p class="news-card-date">March 2025</p>
+            <p class="news-card-excerpt">Join our annual 40 Cans for 40 Days food drive benefiting local families.</p>
+            <a href="#" class="news-card-link">Read More <span>→</span></a>
           </div>
         </article>
 
         <!-- Card 4 -->
-        <article class="card card--gold-top">
-          <img src="images/2026ParishPastoralCouncilPicture.jpeg" alt="Meet the 2026 Pastoral Council" class="card__image">
-          <div class="card__body">
-            <span class="news-tag">Parish Life</span>
-            <h3 class="card__title">Meet the 2026 Pastoral Council</h3>
-            <p class="card__date">2026</p>
-            <p class="card__text">Welcoming the new members of our Parish Pastoral Council as they begin their term of service.</p>
-            <a href="#" class="card__link btn-secondary-small">Read More</a>
+        <article class="news-card parish-card">
+          <div class="news-card-image">
+            <img src="images/2026ParishPastoralCouncilPicture.jpeg" alt="Meet the 2026 Pastoral Council">
+          </div>
+          <div class="news-card-content">
+            <span class="news-category">Parish Life</span>
+            <h3 class="news-card-headline">Meet the 2026 Pastoral Council</h3>
+            <p class="news-card-date">January 2026</p>
+            <p class="news-card-excerpt">Welcoming the new members of our Parish Pastoral Council.</p>
+            <a href="#" class="news-card-link">Read More <span>→</span></a>
           </div>
         </article>
 
         <!-- Card 5 -->
-        <article class="card card--gold-top">
-          <img src="images/20250307_180101.jpg" alt="Parish Update — March 2025" class="card__image">
-          <div class="card__body">
-            <span class="news-tag">Events</span>
-            <h3 class="card__title">Parish Update — March 2025</h3>
-            <p class="card__date">March 2025</p>
-            <p class="card__text">Highlights and upcoming events from our parish community as we enter the spring season.</p>
-            <a href="#" class="card__link btn-secondary-small">Read More</a>
+        <article class="news-card parish-card">
+          <div class="news-card-image">
+            <img src="images/20250307_180101.jpg" alt="March 2025 Parish Update">
+          </div>
+          <div class="news-card-content">
+            <span class="news-category">Events</span>
+            <h3 class="news-card-headline">March 2025 Parish Update</h3>
+            <p class="news-card-date">March 2025</p>
+            <p class="news-card-excerpt">Highlights and upcoming events from our parish community.</p>
+            <a href="#" class="news-card-link">Read More <span>→</span></a>
           </div>
         </article>
 
         <!-- Card 6 -->
-        <article class="card card--gold-top">
-          <img src="images/image_20231018_111629966.png" alt="Catholic Ministries Appeal" class="card__image">
-          <div class="card__body">
-            <span class="news-tag">Giving</span>
-            <h3 class="card__title">Catholic Ministries Appeal</h3>
-            <p class="card__date">Annual</p>
-            <p class="card__text">Support the Diocese of Scranton's annual Catholic Ministries Appeal benefiting parishes and ministries throughout our diocese.</p>
-            <a href="https://annualappeal.org" target="_blank" class="card__link btn-secondary-small">Learn More →</a>
+        <article class="news-card parish-card">
+          <div class="news-card-image">
+            <img src="images/image_20231018_111629966.png" alt="Catholic Ministries Appeal">
+          </div>
+          <div class="news-card-content">
+            <span class="news-category">Giving</span>
+            <h3 class="news-card-headline">Catholic Ministries Appeal</h3>
+            <p class="news-card-date">October 2023</p>
+            <p class="news-card-excerpt">Support the Diocese of Scranton's annual Catholic Ministries Appeal.</p>
+            <a href="#" class="news-card-link">Read More <span>→</span></a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- BULLETINS -->
-  <section class="section section--navy">
+  <!-- BULLETINS SECTION -->
+  <section class="bulletins-section">
     <div class="container">
-      <div class="two-col">
-        <div>
-          <img src="images/bulletins.jpg" alt="Church of Saint Luke weekly parish bulletins" style="width:100%; height:340px; object-fit:cover; border-radius:4px;">
+      <div class="bulletins-content">
+        <div class="bulletins-image reveal">
+          <img src="images/bulletins.jpg" alt="Weekly Bulletins">
         </div>
-        <div>
-          <span class="eyebrow">Every Week</span>
-          <h2 style="color: white; margin-bottom: 20px;">Weekly Bulletins</h2>
-          <p style="color: rgba(255,255,255,0.95); font-size: 1rem; line-height: 1.8; margin-bottom: 24px;">Download this week's bulletin or browse our archive for past issues. The bulletin contains Mass readings, parish news, event announcements, and more.</p>
-          <img src="images/Bulletin2018415thumbnail782x373.png" alt="Sample parish bulletin thumbnail" style="width:100%; border-radius:4px; margin-top:16px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-          <a href="#" class="btn-gold" style="margin-top: 24px; display: inline-block;">View All Bulletins</a>
+        <div class="bulletins-text">
+          <h2 class="section-heading-reveal">Weekly Bulletins</h2>
+          <p>Download this week's bulletin or browse our complete archive of parish bulletins. Stay informed about Mass times, upcoming events, and important parish announcements.</p>
+
+          <div class="bulletin-thumbnail reveal">
+            <img src="images/Bulletin2018415thumbnail782x373.png" alt="Current Bulletin">
+            <div class="bulletin-thumbnail-text">
+              <h3>This Week's Bulletin</h3>
+              <p>April 14, 2025 – Download and review this week's announcements and news</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn-gold">View All Bulletins</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEWSLETTERS -->
-  <section class="section section--off-white">
+  <!-- NEWSLETTERS SECTION -->
+  <section class="newsletters-section">
     <div class="container">
-      <div class="section-heading">
-        <h2>Parish Newsletters</h2>
-        <div class="gold-line"></div>
+      <div class="newsletters-header">
+        <div class="section-eyebrow section-label">Community Connection</div>
+        <h2 class="section-heading-reveal">Parish Newsletters</h2>
       </div>
 
-      <div style="max-width: 1000px; margin: 0 auto;">
-        <div class="grid-2">
-          <!-- Newsletter 1 -->
-          <div class="newsletter-card">
-            <img src="images/FallNewslettercover.png" alt="Fall Parish Newsletter cover" class="card__image">
-            <h3>Fall Newsletter</h3>
-            <a href="#" class="btn-secondary">Read</a>
-          </div>
+      <div class="newsletters-grid">
+        <article class="newsletter-card reveal">
+          <img src="images/FallNewslettercover.png" alt="Fall Newsletter">
+          <div class="newsletter-title">Fall Newsletter</div>
+        </article>
 
-          <!-- Newsletter 2 -->
-          <div class="newsletter-card">
-            <img src="images/2024AdventNewsletter.jpg" alt="Advent 2024 Parish Newsletter" class="card__image">
-            <h3>Advent 2024 Newsletter</h3>
-            <a href="#" class="btn-secondary">Read</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CALENDAR EMBED -->
-  <section class="section section--white">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Parish Calendar</h2>
-        <div class="gold-line"></div>
+        <article class="newsletter-card reveal">
+          <img src="images/2024AdventNewsletter.jpg" alt="Advent 2024 Newsletter">
+          <div class="newsletter-title">Advent 2024 Newsletter</div>
+        </article>
       </div>
 
-      <p style="text-align: center; color: var(--gray-text); font-size: 1rem; margin-bottom: 40px;">View upcoming Masses, events, and parish activities.</p>
-
-      <div style="width:100%; max-width:800px; margin:0 auto 40px; height:400px; background:var(--gray-light); border-radius:4px; display:flex; align-items:center; justify-content:center; color:var(--gray-text); font-style:italic; border:2px dashed var(--gray-light);">
-        <span>Calendar embed — connect to parish calendar system</span>
-      </div>
-
-      <div style="text-align: center;">
-        <a href="#" class="btn-primary">Full Calendar</a>
+      <div class="cta-center">
+        <a href="#" class="btn-secondary">View All Newsletters</a>
       </div>
     </div>
   </section>
@@ -412,7 +613,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-col">
-        <img src="images/stlukescolorfinalforwebsmallnotext.png" alt="Church of Saint Luke" style="height: 45px; margin-bottom: 12px; filter: brightness(0) invert(1);">
+        <img src="images/logo.jpg" alt="Church of Saint Luke" style="height: 55px; margin-bottom: 12px; filter: brightness(0) invert(1);">
         <h3>Church of Saint Luke</h3>
         <p>Serving the Greater Stroudsburg Area</p>
       </div>
@@ -434,10 +635,16 @@
         <p>818 Main Street<br>Stroudsburg, PA 18360</p>
         <p><a href="tel:+15704219097">570-421-9097</a></p>
         <p><a href="mailto:office@churchofsaintluke.org">office@churchofsaintluke.org</a></p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">FB</a>
-          <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">IG</a>
-          <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">YT</a>
+        <div class="footer-social" style="display: flex; gap: 12px; margin-top: 16px;">
+          <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook" class="social-icon-link">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram" class="social-icon-link">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube" class="social-icon-link">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" style="fill: white"/></svg>
+          </a>
         </div>
       </div>
     </div>
