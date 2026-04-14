@@ -24,6 +24,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -305,7 +310,18 @@ footer {
   font-size: 0.95rem;
   line-height: 1.8;
   margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-col p a {
   color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-col p a:hover {
+  color: var(--gold);
+  text-decoration: underline;
 }
 
 .footer-col ul {
@@ -332,19 +348,25 @@ footer {
 }
 
 .footer-social a {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
   border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .footer-social a:hover {
   background-color: var(--gold);
   color: var(--navy);
+  border-color: var(--gold);
 }
 
 .footer-bottom {
@@ -370,6 +392,23 @@ footer {
 .fade-in {
   animation: fadeIn 0.8s ease-out forwards;
   opacity: 0;
+}
+
+/* Quick Links Cards */
+.quick-card {
+  background: white;
+  padding: 32px 28px;
+  border-radius: 4px;
+  text-align: left;
+  border-top: 3px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.quick-card:hover {
+  border-top-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 /* Responsive Design */
@@ -425,5 +464,25 @@ footer {
 
   .section-subtitle {
     font-size: 1rem;
+  }
+
+  .schedule-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .schedule-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .schedule-grid > div {
+    border-bottom: none !important;
+    padding: 16px 0 !important;
   }
 }
