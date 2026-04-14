@@ -3,98 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News & Bulletins | Church of Saint Luke</title>
+  <title>News and Bulletins | Church of Saint Luke</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
+    /* News-specific styles */
     .news-tag {
       display: inline-block;
       background-color: var(--gold);
       color: var(--navy);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
       margin-bottom: 12px;
     }
 
-    .news-date {
-      color: var(--gray-text);
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-    }
-
-    .news-card {
+    .card {
       background: white;
       border-radius: 4px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    .news-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
 
-    .news-card img {
+    .card--gold-top {
+      border-top: 3px solid var(--gold);
+    }
+
+    .card__image {
       width: 100%;
-      height: 250px;
+      height: 220px;
       object-fit: cover;
+      display: block;
     }
 
-    .news-card-body {
+    .card__body {
       padding: 24px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
     }
 
-    .news-card h3 {
-      margin-bottom: 12px;
+    .card__title {
+      font-family: var(--font-heading);
       font-size: 1.3rem;
+      font-weight: 600;
       color: var(--navy);
-      flex-grow: 0;
+      margin: 12px 0 8px;
+      line-height: 1.3;
     }
 
-    .news-card p {
+    .card__date {
+      color: var(--gray-text);
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .card__text {
       color: var(--gray-text);
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 16px;
-      flex-grow: 1;
     }
 
-    .news-card a {
+    .card__link {
       color: var(--navy);
-      font-weight: 700;
       text-decoration: none;
-      display: inline-block;
+      font-weight: 600;
+      font-size: 0.9rem;
       transition: color 0.3s ease;
+      display: inline-block;
     }
 
-    .news-card a:hover {
+    .card__link:hover {
       color: var(--gold);
     }
 
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section--white {
+      background-color: white;
+    }
+
+    .section--off-white {
+      background-color: var(--off-white);
+    }
+
+    .section--navy {
+      background: linear-gradient(rgba(15,28,56,0.94), rgba(15,28,56,0.94)), url('images/church.jpg') center/cover no-repeat;
+      color: white;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+
+    .section-heading--white h2 {
+      color: white;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .btn-secondary-small {
+      padding: 8px 20px;
+      font-size: 0.85rem;
+    }
+
+    .newsletter-card {
+      text-align: center;
+      background: white;
+      border-radius: 4px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .newsletter-card .card__image {
+      height: 350px;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-card h3 {
+      margin: 16px 0;
+      color: var(--navy);
+    }
+
     @media (max-width: 1024px) {
-      .news-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 768px) {
-      .news-grid {
-        grid-template-columns: 1fr !important;
+      .grid-3 {
+        grid-template-columns: 1fr;
       }
 
-      .bulletins-section,
-      .newsletters-section {
-        grid-template-columns: 1fr !important;
+      .section {
+        padding: 60px 0;
       }
     }
   </style>
@@ -143,130 +242,160 @@
   </header>
 
   <!-- PAGE HERO -->
-  <section class="fade-in" style="background: linear-gradient(rgba(26, 46, 90, 0.6), rgba(26, 46, 90, 0.6)), url('images/bulletins.jpg') center/cover no-repeat; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
-    <h1 style="color: white; margin-bottom: 16px;">News & Bulletins</h1>
-    <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.95);">Stay up to date with parish life</p>
+  <section style="background: linear-gradient(rgba(10,22,46,0.72), rgba(10,22,46,0.72)), url('images/bulletins.jpg') center/cover no-repeat; height: 380px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative;">
+    <div class="container">
+      <h1 style="color: white; margin-bottom: 20px; font-size: 3rem;">News and Bulletins</h1>
+      <div class="gold-line"></div>
+      <p style="color: white; font-size: 1.2rem; margin-top: 20px;">Stay up to date with parish life</p>
+    </div>
   </section>
 
-  <!-- FEATURED NEWS CARDS -->
-  <section class="section fade-in" style="background: white;">
+  <!-- FEATURED NEWS -->
+  <section class="section section--white">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;" class="news-grid">
+      <div class="section-heading">
+        <h2>Latest News</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="grid-3">
         <!-- Card 1 -->
-        <article class="news-card">
-          <img src="images/DSC_55062820250414T16_01_56_76129.JPG" alt="Living Stations of the Cross 2025">
-          <div class="news-card-body">
+        <article class="card card--gold-top">
+          <img src="images/DSC_55062820250414T16_01_56_76129.JPG" alt="Living Stations of the Cross 2025" class="card__image">
+          <div class="card__body">
             <span class="news-tag">Events</span>
-            <h3>Living Stations of the Cross 2025</h3>
-            <p class="news-date">April 14, 2025</p>
-            <p>Students brought the Passion of Christ to life on the streets of Stroudsburg.</p>
-            <a href="#">Read More →</a>
+            <h3 class="card__title">Living Stations of the Cross 2025</h3>
+            <p class="card__date">April 14, 2025</p>
+            <p class="card__text">Students brought the Passion of Christ to life on the streets of Stroudsburg in our annual Living Stations.</p>
+            <a href="#" class="card__link btn-secondary-small">Read More</a>
           </div>
         </article>
 
         <!-- Card 2 -->
-        <article class="news-card">
-          <img src="images/Iftar202511.JPG" alt="Interfaith Iftar Dinner 2025">
-          <div class="news-card-body">
+        <article class="card card--gold-top">
+          <img src="images/Iftar202511.JPG" alt="Interfaith Iftar Dinner 2025" class="card__image">
+          <div class="card__body">
             <span class="news-tag">Community</span>
-            <h3>Interfaith Iftar Dinner 2025</h3>
-            <p class="news-date">April 10, 2025</p>
-            <p>Saint Luke welcomed our Muslim neighbors for an evening of prayer and shared meals.</p>
-            <a href="#">Read More →</a>
+            <h3 class="card__title">Interfaith Iftar Dinner 2025</h3>
+            <p class="card__date">2025</p>
+            <p class="card__text">Saint Luke welcomed our Muslim neighbors for an evening of prayer, shared meals, and interfaith dialogue.</p>
+            <a href="#" class="card__link btn-secondary-small">Read More</a>
           </div>
         </article>
 
         <!-- Card 3 -->
-        <article class="news-card">
-          <img src="images/LentenFlyer2025Page1.jpg" alt="Lenten Fundraiser 2025">
-          <div class="news-card-body">
+        <article class="card card--gold-top">
+          <img src="images/LentenFlyer2025Page1.jpg" alt="Lenten Fundraiser 2025" class="card__image">
+          <div class="card__body">
             <span class="news-tag">Giving</span>
-            <h3>Lenten Fundraiser 2025</h3>
-            <p class="news-date">March 5, 2025</p>
-            <p>Join our annual 40 Cans for 40 Days food drive benefiting local families.</p>
-            <a href="#">Read More →</a>
+            <h3 class="card__title">Lenten Fundraiser 2025</h3>
+            <p class="card__date">Lent 2025</p>
+            <p class="card__text">Join our annual 40 Cans for 40 Days food drive benefiting local families throughout the Stroudsburg area.</p>
+            <a href="#" class="card__link btn-secondary-small">Read More</a>
           </div>
         </article>
 
         <!-- Card 4 -->
-        <article class="news-card">
-          <img src="images/2026ParishPastoralCouncilPicture.jpeg" alt="Meet the 2026 Pastoral Council">
-          <div class="news-card-body">
+        <article class="card card--gold-top">
+          <img src="images/2026ParishPastoralCouncilPicture.jpeg" alt="Meet the 2026 Pastoral Council" class="card__image">
+          <div class="card__body">
             <span class="news-tag">Parish Life</span>
-            <h3>Meet the 2026 Pastoral Council</h3>
-            <p class="news-date">March 1, 2025</p>
-            <p>Welcoming the new members of our Parish Pastoral Council.</p>
-            <a href="#">Read More →</a>
+            <h3 class="card__title">Meet the 2026 Pastoral Council</h3>
+            <p class="card__date">2026</p>
+            <p class="card__text">Welcoming the new members of our Parish Pastoral Council as they begin their term of service.</p>
+            <a href="#" class="card__link btn-secondary-small">Read More</a>
           </div>
         </article>
 
         <!-- Card 5 -->
-        <article class="news-card">
-          <img src="images/20250307_180101.jpg" alt="March 2025 Parish Update">
-          <div class="news-card-body">
+        <article class="card card--gold-top">
+          <img src="images/20250307_180101.jpg" alt="Parish Update — March 2025" class="card__image">
+          <div class="card__body">
             <span class="news-tag">Events</span>
-            <h3>March 2025 Parish Update</h3>
-            <p class="news-date">March 7, 2025</p>
-            <p>Highlights and upcoming events from our parish community.</p>
-            <a href="#">Read More →</a>
+            <h3 class="card__title">Parish Update — March 2025</h3>
+            <p class="card__date">March 2025</p>
+            <p class="card__text">Highlights and upcoming events from our parish community as we enter the spring season.</p>
+            <a href="#" class="card__link btn-secondary-small">Read More</a>
           </div>
         </article>
 
         <!-- Card 6 -->
-        <article class="news-card">
-          <img src="images/image_20231018_111629966.png" alt="Catholic Ministries Appeal">
-          <div class="news-card-body">
+        <article class="card card--gold-top">
+          <img src="images/image_20231018_111629966.png" alt="Catholic Ministries Appeal" class="card__image">
+          <div class="card__body">
             <span class="news-tag">Giving</span>
-            <h3>Catholic Ministries Appeal</h3>
-            <p class="news-date">February 20, 2025</p>
-            <p>Support the Diocese of Scranton's annual Catholic Ministries Appeal.</p>
-            <a href="#">Read More →</a>
+            <h3 class="card__title">Catholic Ministries Appeal</h3>
+            <p class="card__date">Annual</p>
+            <p class="card__text">Support the Diocese of Scranton's annual Catholic Ministries Appeal benefiting parishes and ministries throughout our diocese.</p>
+            <a href="https://annualappeal.org" target="_blank" class="card__link btn-secondary-small">Learn More →</a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- BULLETINS SECTION -->
-  <section class="section fade-in" style="background: var(--navy); color: white;">
+  <!-- BULLETINS -->
+  <section class="section section--navy">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;" class="bulletins-section">
-        <img src="images/bulletins.jpg" alt="Weekly Bulletins" style="width: 100%; border-radius: 4px; object-fit: cover; height: 400px;">
+      <div class="two-col">
         <div>
+          <img src="images/bulletins.jpg" alt="Church of Saint Luke weekly parish bulletins" style="width:100%; height:340px; object-fit:cover; border-radius:4px;">
+        </div>
+        <div>
+          <span class="eyebrow">Every Week</span>
           <h2 style="color: white; margin-bottom: 20px;">Weekly Bulletins</h2>
-          <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255, 255, 255, 0.95);">Download this week's bulletin or browse our archive of past bulletins.</p>
-          <img src="images/Bulletin2018415thumbnail782x373.png" alt="Sample Bulletin" style="width: 100%; max-width: 300px; border-radius: 4px; margin-bottom: 24px;">
-          <a href="#" class="btn-gold">View All Bulletins</a>
+          <p style="color: rgba(255,255,255,0.95); font-size: 1rem; line-height: 1.8; margin-bottom: 24px;">Download this week's bulletin or browse our archive for past issues. The bulletin contains Mass readings, parish news, event announcements, and more.</p>
+          <img src="images/Bulletin2018415thumbnail782x373.png" alt="Sample parish bulletin thumbnail" style="width:100%; border-radius:4px; margin-top:16px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+          <a href="#" class="btn-gold" style="margin-top: 24px; display: inline-block;">View All Bulletins</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEWSLETTERS SECTION -->
-  <section class="section fade-in" style="background-color: var(--off-white);">
+  <!-- NEWSLETTERS -->
+  <section class="section section--off-white">
     <div class="container">
-      <h2 class="section-title">Parish Newsletters</h2>
+      <div class="section-heading">
+        <h2>Parish Newsletters</h2>
+        <div class="gold-line"></div>
+      </div>
 
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 40px;" class="newsletters-section">
-        <!-- Newsletter 1 -->
-        <article style="text-align: center;">
-          <img src="images/FallNewslettercover.png" alt="Fall Newsletter" style="width: 100%; border-radius: 4px; margin-bottom: 20px; max-height: 400px; object-fit: cover;">
-          <h3 style="margin-bottom: 16px; font-size: 1.4rem;">Fall Newsletter</h3>
-          <p style="color: var(--gray-text); margin-bottom: 20px;">Explore parish events, ministry updates, and community news from Fall 2024.</p>
-          <a href="#" style="color: var(--navy); font-weight: 700; text-decoration: none; display: inline-block; transition: color 0.3s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--navy)'">Download →</a>
-        </article>
+      <div style="max-width: 1000px; margin: 0 auto;">
+        <div class="grid-2">
+          <!-- Newsletter 1 -->
+          <div class="newsletter-card">
+            <img src="images/FallNewslettercover.png" alt="Fall Parish Newsletter cover" class="card__image">
+            <h3>Fall Newsletter</h3>
+            <a href="#" class="btn-secondary">Read</a>
+          </div>
 
-        <!-- Newsletter 2 -->
-        <article style="text-align: center;">
-          <img src="images/2024AdventNewsletter.jpg" alt="Advent 2024 Newsletter" style="width: 100%; border-radius: 4px; margin-bottom: 20px; max-height: 400px; object-fit: cover;">
-          <h3 style="margin-bottom: 16px; font-size: 1.4rem;">Advent 2024 Newsletter</h3>
-          <p style="color: var(--gray-text); margin-bottom: 20px;">Spiritual reflections, advent programs, and holiday event information for the Advent season.</p>
-          <a href="#" style="color: var(--navy); font-weight: 700; text-decoration: none; display: inline-block; transition: color 0.3s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--navy)'">Download →</a>
-        </article>
+          <!-- Newsletter 2 -->
+          <div class="newsletter-card">
+            <img src="images/2024AdventNewsletter.jpg" alt="Advent 2024 Parish Newsletter" class="card__image">
+            <h3>Advent 2024 Newsletter</h3>
+            <a href="#" class="btn-secondary">Read</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDAR EMBED -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Parish Calendar</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <p style="text-align: center; color: var(--gray-text); font-size: 1rem; margin-bottom: 40px;">View upcoming Masses, events, and parish activities.</p>
+
+      <div style="width:100%; max-width:800px; margin:0 auto 40px; height:400px; background:var(--gray-light); border-radius:4px; display:flex; align-items:center; justify-content:center; color:var(--gray-text); font-style:italic; border:2px dashed var(--gray-light);">
+        <span>Calendar embed — connect to parish calendar system</span>
       </div>
 
       <div style="text-align: center;">
-        <a href="#" class="btn-secondary">View All Newsletters</a>
+        <a href="#" class="btn-primary">Full Calendar</a>
       </div>
     </div>
   </section>
