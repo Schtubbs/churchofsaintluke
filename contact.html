@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Church of Saint Luke</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border: 1px solid var(--gray-light);
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      width: 100%;
+    }
+
+    .form-note {
+      font-size: 0.85rem;
+      color: var(--gray-text);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      display: none;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .mass-schedule-box {
+      background: var(--navy-dark);
+      color: white;
+      padding: 24px;
+      border-radius: 4px;
+      margin: 24px 0;
+    }
+
+    .mass-schedule-box h3 {
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .mass-schedule-box p {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .contact-layout {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="images/stlukescolorfinalforwebsmallnotext.png" alt="Church of Saint Luke">
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="our-team.html">Our Story</a>
+        <a href="sacraments.html">Sacraments</a>
+        <a href="faith-formation.html">Faith Formation</a>
+        <a href="ministries.html">Ministries</a>
+        <a href="giving.html">Giving</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="https://members.myeoffering.com/#/landing" class="btn-gold give-btn">Give Online</a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="our-team.html">Our Story</a>
+      <a href="sacraments.html">Sacraments</a>
+      <a href="faith-formation.html">Faith Formation</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="giving.html">Giving</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="mobile-social">
+      <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">f</a>
+      <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">📷</a>
+      <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">▶</a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="fade-in" style="background: var(--navy); color: white; padding: 80px 24px; text-align: center;">
+    <h1 style="color: white; margin-bottom: 16px;">Contact Us</h1>
+    <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.95);">We'd love to hear from you.</p>
+  </section>
+
+  <!-- CONTACT LAYOUT -->
+  <section id="contact" class="section fade-in" style="background: white;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 60% 40%; gap: 50px; align-items: start;" class="contact-layout">
+        <!-- LEFT COLUMN — CONTACT INFO -->
+        <div>
+          <h2 style="margin-bottom: 24px;">Parish Office</h2>
+
+          <div style="margin-bottom: 24px;">
+            <p style="font-size: 1rem; margin-bottom: 12px; color: var(--gray-text);">
+              <span style="display: inline-block; margin-right: 12px;">📍</span>
+              <strong>818 Main Street<br>Stroudsburg, PA 18360</strong>
+            </p>
+            <p style="font-size: 1rem; margin-bottom: 12px; color: var(--gray-text);">
+              <span style="display: inline-block; margin-right: 12px;">📞</span>
+              <a href="tel:+15704219097" style="color: var(--navy); text-decoration: none; font-weight: 500;">570-421-9097</a>
+            </p>
+            <p style="font-size: 1rem; color: var(--gray-text);">
+              <span style="display: inline-block; margin-right: 12px;">📧</span>
+              <a href="mailto:office@churchofsaintluke.org" style="color: var(--navy); text-decoration: none; font-weight: 500;">office@churchofsaintluke.org</a>
+            </p>
+          </div>
+
+          <!-- MASS SCHEDULE BOX -->
+          <div class="mass-schedule-box">
+            <h3>Mass Schedule</h3>
+            <p><strong>Weekday:</strong> Mon 6:30PM · Tue–Fri 7:30AM</p>
+            <p><strong>Weekend:</strong> Sat 4PM · Sun 8AM, 10:30AM, 2PM (Polish)</p>
+            <p><strong>Confession:</strong> Saturday 3:00 PM</p>
+            <p><strong>Adoration:</strong> Monday 10AM – 6:30PM</p>
+            <p><strong>Rosary:</strong> Tue–Fri after 7:30AM Mass</p>
+            <p><strong>Live Stream:</strong> Facebook Sunday 10:30AM</p>
+          </div>
+
+          <!-- SOCIAL LINKS -->
+          <div class="social-links">
+            <a href="https://www.facebook.com/churchofsaintluke/" target="_blank">
+              <span>f</span> Facebook
+            </a>
+            <a href="https://www.instagram.com/saintluke818" target="_blank">
+              <span>📷</span> Instagram
+            </a>
+            <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank">
+              <span>▶</span> YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN — CONTACT FORM -->
+        <div>
+          <div style="background: white; padding: 32px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <div class="success-message" id="successMessage">
+              Thank you! Your message has been received. We'll respond within 1–2 business days.
+            </div>
+
+            <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+              <div>
+                <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--body-text);">Name *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div>
+                <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--body-text);">Email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div>
+                <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--body-text);">Phone</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+
+              <div>
+                <label for="subject" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--body-text);">Subject *</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="sacrament">Sacrament Request</option>
+                  <option value="volunteer">Volunteer</option>
+                  <option value="prayer">Prayer Request</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--body-text);">Message *</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary">Send Message</button>
+
+              <p class="form-note">We'll respond within 1–2 business days.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE MAP -->
+  <section style="padding: 0; background: white;">
+    <div style="width: 100%; height: 420px; overflow: hidden;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.7!2d-75.19!3d40.98!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s818+Main+St+Stroudsburg+PA!5e0!3m2!1sen!2sus!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <img src="images/stlukescolorfinalforwebsmallnotext.png" alt="Church of Saint Luke" style="height: 45px; margin-bottom: 12px;">
+        <h3>Church of Saint Luke</h3>
+        <p>Serving the Greater Stroudsburg Area</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-team.html">Our Story</a></li>
+          <li><a href="sacraments.html">Sacraments</a></li>
+          <li><a href="faith-formation.html">Faith Formation</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="giving.html">Giving</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p>📍 818 Main Street<br>Stroudsburg, PA 18360</p>
+        <p>📞 <a href="tel:+15704219097">570-421-9097</a></p>
+        <p>📧 <a href="mailto:office@churchofsaintluke.org">office@churchofsaintluke.org</a></p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">f</a>
+          <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">📷</a>
+          <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Church of Saint Luke · 818 Main Street, Stroudsburg PA 18360
+    </div>
+  </footer>
+
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+
+      // Show success message
+      successMessage.classList.add('show');
+
+      // Reset form
+      form.reset();
+
+      // Hide message after 4 seconds
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+      }, 4000);
+    }
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Bulletins | Church of Saint Luke</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .news-tag {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--navy);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .news-date {
+      color: var(--gray-text);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .news-card-body {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      color: var(--navy);
+      flex-grow: 0;
+    }
+
+    .news-card p {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .news-card a {
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .news-card a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 1024px) {
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .news-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .bulletins-section,
+      .newsletters-section {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="images/stlukescolorfinalforwebsmallnotext.png" alt="Church of Saint Luke">
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="our-team.html">Our Story</a>
+        <a href="sacraments.html">Sacraments</a>
+        <a href="faith-formation.html">Faith Formation</a>
+        <a href="ministries.html">Ministries</a>
+        <a href="giving.html">Giving</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="https://members.myeoffering.com/#/landing" class="btn-gold give-btn">Give Online</a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="our-team.html">Our Story</a>
+      <a href="sacraments.html">Sacraments</a>
+      <a href="faith-formation.html">Faith Formation</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="giving.html">Giving</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="mobile-social">
+      <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">f</a>
+      <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">📷</a>
+      <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">▶</a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="fade-in" style="background: linear-gradient(rgba(26, 46, 90, 0.6), rgba(26, 46, 90, 0.6)), url('images/bulletins.jpg') center/cover no-repeat; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
+    <h1 style="color: white; margin-bottom: 16px;">News & Bulletins</h1>
+    <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.95);">Stay up to date with parish life</p>
+  </section>
+
+  <!-- FEATURED NEWS CARDS -->
+  <section class="section fade-in" style="background: white;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;" class="news-grid">
+        <!-- Card 1 -->
+        <article class="news-card">
+          <img src="images/DSC_55062820250414T16_01_56_76129.JPG" alt="Living Stations of the Cross 2025">
+          <div class="news-card-body">
+            <span class="news-tag">Events</span>
+            <h3>Living Stations of the Cross 2025</h3>
+            <p class="news-date">April 14, 2025</p>
+            <p>Students brought the Passion of Christ to life on the streets of Stroudsburg.</p>
+            <a href="#">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="news-card">
+          <img src="images/Iftar202511.JPG" alt="Interfaith Iftar Dinner 2025">
+          <div class="news-card-body">
+            <span class="news-tag">Community</span>
+            <h3>Interfaith Iftar Dinner 2025</h3>
+            <p class="news-date">April 10, 2025</p>
+            <p>Saint Luke welcomed our Muslim neighbors for an evening of prayer and shared meals.</p>
+            <a href="#">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="news-card">
+          <img src="images/LentenFlyer2025Page1.jpg" alt="Lenten Fundraiser 2025">
+          <div class="news-card-body">
+            <span class="news-tag">Giving</span>
+            <h3>Lenten Fundraiser 2025</h3>
+            <p class="news-date">March 5, 2025</p>
+            <p>Join our annual 40 Cans for 40 Days food drive benefiting local families.</p>
+            <a href="#">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="news-card">
+          <img src="images/2026ParishPastoralCouncilPicture.jpeg" alt="Meet the 2026 Pastoral Council">
+          <div class="news-card-body">
+            <span class="news-tag">Parish Life</span>
+            <h3>Meet the 2026 Pastoral Council</h3>
+            <p class="news-date">March 1, 2025</p>
+            <p>Welcoming the new members of our Parish Pastoral Council.</p>
+            <a href="#">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="news-card">
+          <img src="images/20250307_180101.jpg" alt="March 2025 Parish Update">
+          <div class="news-card-body">
+            <span class="news-tag">Events</span>
+            <h3>March 2025 Parish Update</h3>
+            <p class="news-date">March 7, 2025</p>
+            <p>Highlights and upcoming events from our parish community.</p>
+            <a href="#">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="news-card">
+          <img src="images/image_20231018_111629966.png" alt="Catholic Ministries Appeal">
+          <div class="news-card-body">
+            <span class="news-tag">Giving</span>
+            <h3>Catholic Ministries Appeal</h3>
+            <p class="news-date">February 20, 2025</p>
+            <p>Support the Diocese of Scranton's annual Catholic Ministries Appeal.</p>
+            <a href="#">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BULLETINS SECTION -->
+  <section class="section fade-in" style="background: var(--navy); color: white;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;" class="bulletins-section">
+        <img src="images/bulletins.jpg" alt="Weekly Bulletins" style="width: 100%; border-radius: 4px; object-fit: cover; height: 400px;">
+        <div>
+          <h2 style="color: white; margin-bottom: 20px;">Weekly Bulletins</h2>
+          <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255, 255, 255, 0.95);">Download this week's bulletin or browse our archive of past bulletins.</p>
+          <img src="images/Bulletin2018415thumbnail782x373.png" alt="Sample Bulletin" style="width: 100%; max-width: 300px; border-radius: 4px; margin-bottom: 24px;">
+          <a href="#" class="btn-gold">View All Bulletins</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTERS SECTION -->
+  <section class="section fade-in" style="background-color: var(--off-white);">
+    <div class="container">
+      <h2 class="section-title">Parish Newsletters</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 40px;" class="newsletters-section">
+        <!-- Newsletter 1 -->
+        <article style="text-align: center;">
+          <img src="images/FallNewslettercover.png" alt="Fall Newsletter" style="width: 100%; border-radius: 4px; margin-bottom: 20px; max-height: 400px; object-fit: cover;">
+          <h3 style="margin-bottom: 16px; font-size: 1.4rem;">Fall Newsletter</h3>
+          <p style="color: var(--gray-text); margin-bottom: 20px;">Explore parish events, ministry updates, and community news from Fall 2024.</p>
+          <a href="#" style="color: var(--navy); font-weight: 700; text-decoration: none; display: inline-block; transition: color 0.3s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--navy)'">Download →</a>
+        </article>
+
+        <!-- Newsletter 2 -->
+        <article style="text-align: center;">
+          <img src="images/2024AdventNewsletter.jpg" alt="Advent 2024 Newsletter" style="width: 100%; border-radius: 4px; margin-bottom: 20px; max-height: 400px; object-fit: cover;">
+          <h3 style="margin-bottom: 16px; font-size: 1.4rem;">Advent 2024 Newsletter</h3>
+          <p style="color: var(--gray-text); margin-bottom: 20px;">Spiritual reflections, advent programs, and holiday event information for the Advent season.</p>
+          <a href="#" style="color: var(--navy); font-weight: 700; text-decoration: none; display: inline-block; transition: color 0.3s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--navy)'">Download →</a>
+        </article>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="#" class="btn-secondary">View All Newsletters</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <img src="images/stlukescolorfinalforwebsmallnotext.png" alt="Church of Saint Luke" style="height: 45px; margin-bottom: 12px;">
+        <h3>Church of Saint Luke</h3>
+        <p>Serving the Greater Stroudsburg Area</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-team.html">Our Story</a></li>
+          <li><a href="sacraments.html">Sacraments</a></li>
+          <li><a href="faith-formation.html">Faith Formation</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="giving.html">Giving</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p>📍 818 Main Street<br>Stroudsburg, PA 18360</p>
+        <p>📞 <a href="tel:+15704219097">570-421-9097</a></p>
+        <p>📧 <a href="mailto:office@churchofsaintluke.org">office@churchofsaintluke.org</a></p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">f</a>
+          <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">📷</a>
+          <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Church of Saint Luke · 818 Main Street, Stroudsburg PA 18360
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
