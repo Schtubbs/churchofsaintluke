@@ -162,68 +162,91 @@
     </style>
   </section>
 
-  <!-- FEATURED IMAGE + TEXT -->
-  <section class="section fade-in" style="background: white;">
+  <!-- PARISH LIFE CARDS -->
+  <section class="section fade-in" style="background-color: var(--off-white); padding: 80px 0;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-        <div>
-          <img src="images/IMG_2977.JPG" alt="Parish Community" style="width: 100%; border-radius: 4px; object-fit: cover; height: 400px;">
+      <div style="text-align: center; margin-bottom: 56px;">
+        <div style="display: inline-block; border: 1px solid var(--gold); color: var(--navy); font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 18px; margin-bottom: 20px;">Parish Life</div>
+        <h2 style="font-size: 2.4rem; color: var(--navy); margin-bottom: 16px;">Grow With Us</h2>
+        <div style="width: 50px; height: 3px; background: var(--gold); margin: 0 auto;"></div>
+      </div>
+
+      <div class="parish-cards-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+
+        <!-- Card 1: Events -->
+        <div class="parish-card" style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="images/IMG_4001.JPG" alt="Parish Events" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" class="card-img">
+          </div>
+          <div style="padding: 24px;">
+            <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">What's Happening</div>
+            <h3 style="font-size: 1.2rem; color: var(--navy); margin-bottom: 12px; line-height: 1.4;">Events This Week</h3>
+            <p style="font-size: 0.92rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px;">From faith formation programs to community gatherings, there's always something meaningful happening at Saint Luke.</p>
+            <a href="news.html" style="font-size: 0.85rem; font-weight: 700; color: var(--navy); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--gold); padding-bottom: 2px;">View Events</a>
+          </div>
         </div>
-        <div>
-          <h2 style="margin-bottom: 20px;">Events This Week</h2>
-          <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; color: var(--gray-text);">Check out what's happening in our parish community. From faith formation programs to community gatherings, there's always something meaningful happening at Saint Luke.</p>
-          <a href="news.html" class="btn-primary">View All Events</a>
+
+        <!-- Card 2: Sacraments -->
+        <div class="parish-card" style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="images/T9A9795.jpg" alt="The Sacraments" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" class="card-img">
+          </div>
+          <div style="padding: 24px;">
+            <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">Foundation of Faith</div>
+            <h3 style="font-size: 1.2rem; color: var(--navy); margin-bottom: 12px; line-height: 1.4;">The Sacraments</h3>
+            <p style="font-size: 0.92rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px;">Baptism, Confirmation, and the Eucharist are the sacred gifts at the heart of our Catholic faith and community life.</p>
+            <a href="sacraments.html" style="font-size: 0.85rem; font-weight: 700; color: var(--navy); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--gold); padding-bottom: 2px;">Learn More</a>
+          </div>
         </div>
+
+        <!-- Card 3: Faith Formation -->
+        <div class="parish-card" style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="images/faith.jpg" alt="Faith Formation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" class="card-img">
+          </div>
+          <div style="padding: 24px;">
+            <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">Lifelong Learning</div>
+            <h3 style="font-size: 1.2rem; color: var(--navy); margin-bottom: 12px; line-height: 1.4;">Faith Formation</h3>
+            <p style="font-size: 0.92rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px;">Programs for children, teens, and adults — helping our community grow closer to God through scripture, prayer, and fellowship.</p>
+            <a href="faith-formation.html" style="font-size: 0.85rem; font-weight: 700; color: var(--navy); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--gold); padding-bottom: 2px;">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Card 4: Ministries -->
+        <div class="parish-card" style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="height: 200px; overflow: hidden;">
+            <img src="images/eucharisticministers960x373.jpg" alt="Our Ministries" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" class="card-img">
+          </div>
+          <div style="padding: 24px;">
+            <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">Serve &amp; Belong</div>
+            <h3 style="font-size: 1.2rem; color: var(--navy); margin-bottom: 12px; line-height: 1.4;">Our Ministries</h3>
+            <p style="font-size: 0.92rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 20px;">From Eucharistic ministers to community outreach, our parish ministries empower members to live out their faith in service.</p>
+            <a href="ministries.html" style="font-size: 0.85rem; font-weight: 700; color: var(--navy); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--gold); padding-bottom: 2px;">Get Involved</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <style>
-      @media (max-width: 768px) {
-        .featured-section {
+      .parish-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+      }
+      .parish-card:hover .card-img {
+        transform: scale(1.05);
+      }
+      @media (max-width: 900px) {
+        .parish-cards-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+      @media (max-width: 520px) {
+        .parish-cards-grid {
           grid-template-columns: 1fr !important;
         }
       }
     </style>
-  </section>
-
-  <!-- SACRAMENTS FEATURE -->
-  <section class="fade-in" style="background: linear-gradient(rgba(26, 46, 90, 0.7), rgba(26, 46, 90, 0.7)), url('images/T9A9795.jpg') center/cover no-repeat; color: white; padding: 120px 24px; text-align: center;">
-    <h2 style="color: white; margin-bottom: 20px; font-size: 2.8rem;">The Sacraments</h2>
-    <div class="gold-line" style="margin: 20px auto 40px; background: var(--gold);"></div>
-    <p style="max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.8;">Christian initiation is accomplished by three sacraments together: Baptism, Confirmation, and the Eucharist. These sacred gifts are the foundation of our faith and the source of God's grace in our lives.</p>
-    <a href="sacraments.html" class="btn-gold">Learn More</a>
-  </section>
-
-  <!-- FAITH FORMATION -->
-  <section class="section fade-in" style="background: white;">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-        <div>
-          <h2 style="margin-bottom: 20px;">Faith Formation</h2>
-          <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: var(--gray-text);">Growing in faith is a lifelong journey. Our comprehensive faith formation programs serve children, teenagers, and adults, guiding them deeper into their relationship with Christ through scripture, prayer, and community.</p>
-          <a href="faith-formation.html" class="btn-primary">Learn More</a>
-        </div>
-        <div>
-          <img src="images/faith.jpg" alt="Faith Formation" style="width: 100%; border-radius: 4px; object-fit: cover; height: 400px;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MINISTRIES -->
-  <section class="section fade-in" style="background-color: var(--off-white);">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-        <div>
-          <img src="images/eucharisticministers960x373.jpg" alt="Ministries" style="width: 100%; border-radius: 4px; object-fit: cover; height: 400px;">
-        </div>
-        <div>
-          <h2 style="margin-bottom: 20px;">Our Ministries</h2>
-          <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: var(--gray-text);">From Eucharistic ministers to altar servers, our parish ministries empower members to live out their faith in service to the community. Whether serving at the altar or reaching out to the homebound, there's a place for everyone to share their gifts.</p>
-          <a href="ministries.html" class="btn-primary">Explore Ministries</a>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- GIVING CTA -->

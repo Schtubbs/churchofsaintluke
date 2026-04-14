@@ -177,11 +177,20 @@ body#home-page header:not(.scrolled) {
 
 body#home-page header:not(.scrolled) .nav-links a {
   color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+body#home-page header:not(.scrolled) .nav-links a:hover {
+  color: var(--gold);
 }
 
 body#home-page header:not(.scrolled) .give-btn {
   background-color: var(--gold);
   color: var(--navy);
+}
+
+body#home-page header:not(.scrolled) .hamburger span {
+  background-color: white;
 }
 
 .header-content {
