@@ -75,18 +75,19 @@ document.addEventListener('DOMContentLoaded', function() {
       '.parish-card',
       '.quick-card',
       '.team-card',
+      '.sponsor-card',
       '.footer-col',
       '.schedule-grid > div',
       'section.section h2',
       'section.section p.section-subtitle',
       '.mass-schedule-box',
-      '.contact-sidebar',
     ].join(',');
 
     // Parents whose direct children should stagger
     const STAGGER_PARENTS = [
       '.parish-cards-grid',
       '.schedule-grid',
+      '.sponsors-grid',
       '.footer-content',
     ];
 

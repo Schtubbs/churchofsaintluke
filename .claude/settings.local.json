@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(cat)",
-      "Bash(chmod +x /tmp/update_pages.sh)"
+      "Bash(chmod +x /tmp/update_pages.sh)",
+      "Bash(grep -n \"css/style\\\\.css\" \"C:\\\\Users\\\\cyber_test\\\\churchofsaintluke\"/*.html)",
+      "Bash(find:*)"
     ]
   }
 }
