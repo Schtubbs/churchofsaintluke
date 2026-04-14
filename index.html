@@ -6,12 +6,12 @@
   <title>Church of Saint Luke | Catholic Parish in Stroudsburg, PA</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body id="home-page">
   <!-- HEADER -->
   <header>
     <div class="header-content">
       <div class="logo">
-        <img src="images/stlukescolorfinalforwebsmallnotext.png" alt="Church of Saint Luke">
+        <img src="images/logo.jpg" alt="Church of Saint Luke">
       </div>
       <nav class="nav-links">
         <a href="index.html">Home</a>
@@ -44,14 +44,20 @@
     </nav>
     <div class="mobile-social">
       <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">f</a>
-      <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">📷</a>
-      <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">▶</a>
+      <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">IG</a>
+      <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">YT</a>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero" style="background: linear-gradient(rgba(15, 28, 56, 0.55), rgba(15, 28, 56, 0.55)), url('images/T9A9720e1521569778941.jpg') center/cover no-repeat; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; position: relative;">
-    <div class="fade-in" style="max-width: 700px; padding: 0 24px;">
+  <section class="hero" style="position: relative; overflow: hidden; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
+    <video autoplay muted loop playsinline poster="images/T9A9720e1521569778941.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+      <source src="images/hero.mp4" type="video/mp4">
+    </video>
+
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 20, 45, 0.55); z-index: 1;"></div>
+
+    <div class="fade-in" style="max-width: 700px; padding: 0 24px; position: relative; z-index: 2;">
       <div style="color: var(--gold); text-transform: uppercase; font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 16px; font-weight: 700;">Welcome to</div>
       <h1 style="color: white; font-size: 4rem; margin-bottom: 20px;">The Church of Saint Luke</h1>
       <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 40px; color: rgba(255, 255, 255, 0.95);">Bringing Christ, in Word and Sacrament, to a diverse community in Stroudsburg, PA</p>
@@ -62,7 +68,7 @@
     </div>
 
     <!-- Scroll Arrow -->
-    <div class="scroll-arrow" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); cursor: pointer; animation: bounce 2s infinite;">
+    <div class="scroll-arrow" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); cursor: pointer; animation: bounce 2s infinite; z-index: 2;">
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
         <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
@@ -81,22 +87,22 @@
     <div class="container">
       <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;">
         <div>
-          <div style="font-size: 1.8rem; margin-bottom: 10px;">📅</div>
+          <div style="font-size: 1.8rem; margin-bottom: 10px; font-weight: bold;">[MASS]</div>
           <h4 style="color: var(--gold); font-size: 1.1rem; margin-bottom: 8px;">Weekday Mass</h4>
           <p style="font-size: 0.95rem;">Mon 6:30PM · Tue–Fri 7:30AM</p>
         </div>
         <div>
-          <div style="font-size: 1.8rem; margin-bottom: 10px;">⛪</div>
+          <div style="font-size: 1.8rem; margin-bottom: 10px;">[CHURCH]</div>
           <h4 style="color: var(--gold); font-size: 1.1rem; margin-bottom: 8px;">Weekend Mass</h4>
           <p style="font-size: 0.95rem;">Sat 4PM · Sun 8AM, 10:30AM, 2PM</p>
         </div>
         <div>
-          <div style="font-size: 1.8rem; margin-bottom: 10px;">🙏</div>
+          <div style="font-size: 1.8rem; margin-bottom: 10px;">[PRAYER]</div>
           <h4 style="color: var(--gold); font-size: 1.1rem; margin-bottom: 8px;">Confession</h4>
           <p style="font-size: 0.95rem;">Saturday 3:00 PM</p>
         </div>
         <div>
-          <div style="font-size: 1.8rem; margin-bottom: 10px;">📿</div>
+          <div style="font-size: 1.8rem; margin-bottom: 10px;">[ROSARY]</div>
           <h4 style="color: var(--gold); font-size: 1.1rem; margin-bottom: 8px;">Adoration</h4>
           <p style="font-size: 0.95rem;">Monday 10AM – 6:30PM</p>
         </div>
@@ -118,21 +124,21 @@
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
         <!-- Card 1 -->
         <div style="background: white; padding: 30px; border-radius: 4px; text-align: center; border-top: 3px solid transparent; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.borderTopColor='var(--gold)'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.borderTopColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-          <div style="font-size: 2.5rem; margin-bottom: 16px;">📋</div>
+          <div style="font-size: 2.5rem; margin-bottom: 16px;">[BULLETIN]</div>
           <h3 style="margin-bottom: 10px; font-size: 1.3rem;">Weekly Bulletin</h3>
           <a href="bulletin" class="btn-primary" style="display: inline-block; margin-top: 10px;">View Bulletin</a>
         </div>
 
         <!-- Card 2 -->
         <div style="background: white; padding: 30px; border-radius: 4px; text-align: center; border-top: 3px solid transparent; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.borderTopColor='var(--gold)'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.borderTopColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-          <div style="font-size: 2.5rem; margin-bottom: 16px;">✝️</div>
+          <div style="font-size: 2.5rem; margin-bottom: 16px;">[CROSS]</div>
           <h3 style="margin-bottom: 10px; font-size: 1.3rem;">Join Our Parish</h3>
           <a href="#contact" class="btn-primary" style="display: inline-block; margin-top: 10px;">Learn More</a>
         </div>
 
         <!-- Card 3 -->
         <div style="background: white; padding: 30px; border-radius: 4px; text-align: center; border-top: 3px solid transparent; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.borderTopColor='var(--gold)'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.1)'" onmouseout="this.style.borderTopColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-          <div style="font-size: 2.5rem; margin-bottom: 16px;">🙏</div>
+          <div style="font-size: 2.5rem; margin-bottom: 16px;">[PRAYER]</div>
           <h3 style="margin-bottom: 10px; font-size: 1.3rem;">Pray Online</h3>
           <a href="https://www.hallow.com" target="_blank" class="btn-primary" style="display: inline-block; margin-top: 10px;">Hallow App</a>
         </div>
@@ -271,9 +277,9 @@
       </div>
       <div class="footer-col">
         <h3>Contact Info</h3>
-        <p>📍 818 Main Street<br>Stroudsburg, PA 18360</p>
-        <p>📞 <a href="tel:+15704219097">570-421-9097</a></p>
-        <p>📧 <a href="mailto:office@churchofsaintluke.org">office@churchofsaintluke.org</a></p>
+        <p>818 Main Street<br>Stroudsburg, PA 18360</p>
+        <p><a href="tel:+15704219097">570-421-9097</a></p>
+        <p><a href="mailto:office@churchofsaintluke.org">office@churchofsaintluke.org</a></p>
         <div class="footer-social">
           <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">f</a>
           <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">📷</a>

@@ -164,6 +164,21 @@ header.scrolled {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Transparent header on homepage hero */
+body#home-page header:not(.scrolled) {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+body#home-page header:not(.scrolled) .nav-links a {
+  color: white;
+}
+
+body#home-page header:not(.scrolled) .give-btn {
+  background-color: var(--gold);
+  color: var(--navy);
+}
+
 .header-content {
   max-width: 1140px;
   margin: 0 auto;
