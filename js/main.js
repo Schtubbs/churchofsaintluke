@@ -22,15 +22,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Sticky nav shadow on scroll
+  // Header scroll behavior
   const header = document.querySelector('header');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 10) {
-      header.classList.add('scrolled');
+  const isHomePage = document.body.id === 'home-page';
+
+  function updateHeader() {
+    if (isHomePage) {
+      if (window.scrollY > 80) {
+        header.classList.remove('hero-transparent');
+        header.classList.add('scrolled');
+      } else {
+        header.classList.add('hero-transparent');
+        header.classList.remove('scrolled');
+      }
     } else {
-      header.classList.remove('scrolled');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     }
-  });
+  }
+
+  // Run on load
+  updateHeader();
+  // Run on scroll
+  window.addEventListener('scroll', updateHeader);
 
   // Active nav link highlighting based on current page
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';

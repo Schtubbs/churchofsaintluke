@@ -158,39 +158,46 @@ a:hover {
 /* Header & Navigation */
 header {
   background-color: var(--white);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 header.scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: var(--white) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
 }
 
-/* Transparent header on homepage hero */
-body#home-page header:not(.scrolled) {
-  background-color: transparent;
-  box-shadow: none;
+/* Homepage transparent state — before scrolling */
+header.hero-transparent {
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
-body#home-page header:not(.scrolled) .nav-links a {
-  color: white;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+header.hero-transparent .nav-links a {
+  color: white !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-body#home-page header:not(.scrolled) .nav-links a:hover {
-  color: var(--gold);
+header.hero-transparent .nav-links a:hover {
+  color: var(--gold) !important;
 }
 
-body#home-page header:not(.scrolled) .give-btn {
-  background-color: var(--gold);
-  color: var(--navy);
+header.hero-transparent .hamburger span {
+  background-color: white !important;
 }
 
-body#home-page header:not(.scrolled) .hamburger span {
-  background-color: white;
+header.hero-transparent .logo img {
+  filter: brightness(0) invert(1);
+}
+
+/* Compensate for fixed header on inner pages */
+body:not(#home-page) {
+  padding-top: 70px;
 }
 
 .header-content {
@@ -418,6 +425,32 @@ footer {
   border-top-color: var(--gold);
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Social icon circles */
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon-link:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.social-icon-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 /* Responsive Design */

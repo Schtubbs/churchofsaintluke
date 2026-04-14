@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Church of Saint Luke</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+  <link rel="apple-touch-icon" href="images/logo.jpg">
   <style>
     .contact-form input,
     .contact-form textarea,
@@ -111,10 +113,11 @@
   <header>
     <div class="header-content">
       <div class="logo">
-        <img src="images/logo.jpg" alt="Church of Saint Luke">
+        <a href="index.html">
+          <img src="images/logo.jpg" alt="Church of Saint Luke">
+        </a>
       </div>
       <nav class="nav-links">
-        <a href="index.html">Home</a>
         <a href="our-team.html">Our Story</a>
         <a href="sacraments.html">Sacraments</a>
         <a href="faith-formation.html">Faith Formation</a>
@@ -132,7 +135,6 @@
       </div>
     </div>
     <nav class="mobile-nav">
-      <a href="index.html">Home</a>
       <a href="our-team.html">Our Story</a>
       <a href="sacraments.html">Sacraments</a>
       <a href="faith-formation.html">Faith Formation</a>
@@ -143,9 +145,15 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="mobile-social">
-      <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">f</a>
-      <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">📷</a>
-      <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">▶</a>
+      <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook" class="social-icon-link" style="border-color: rgba(26,46,90,0.3); color: var(--navy);">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram" class="social-icon-link" style="border-color: rgba(26,46,90,0.3); color: var(--navy);">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+      </a>
+      <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube" class="social-icon-link" style="border-color: rgba(26,46,90,0.3); color: var(--navy);">
+        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="currentColor"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--navy)"/></svg>
+      </a>
     </div>
   </header>
 
@@ -264,7 +272,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-col">
-        <img src="images/stlukescolorfinalforwebsmallnotext.png" alt="Church of Saint Luke" style="height: 45px; margin-bottom: 12px;">
+        <img src="images/stlukescolorfinalforwebsmallnotext.png" alt="Church of Saint Luke" style="height: 45px; margin-bottom: 12px; filter: brightness(0) invert(1);">
         <h3>Church of Saint Luke</h3>
         <p>Serving the Greater Stroudsburg Area</p>
       </div>
@@ -283,13 +291,19 @@
       </div>
       <div class="footer-col">
         <h3>Contact Info</h3>
-        <p>📍 818 Main Street<br>Stroudsburg, PA 18360</p>
-        <p>📞 <a href="tel:+15704219097">570-421-9097</a></p>
-        <p>📧 <a href="mailto:office@churchofsaintluke.org">office@churchofsaintluke.org</a></p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook">f</a>
-          <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram">IG</a>
-          <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube">YT</a>
+        <p>818 Main Street<br>Stroudsburg, PA 18360</p>
+        <p><a href="tel:+15704219097">570-421-9097</a></p>
+        <p><a href="mailto:office@churchofsaintluke.org">office@churchofsaintluke.org</a></p>
+        <div class="footer-social" style="display: flex; gap: 12px; margin-top: 16px;">
+          <a href="https://www.facebook.com/churchofsaintluke/" target="_blank" title="Facebook" class="social-icon-link">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/saintluke818" target="_blank" title="Instagram" class="social-icon-link">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCuW6LHT6lNi7_Wa9XkMgtZw" target="_blank" title="YouTube" class="social-icon-link">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" style="fill: white"/></svg>
+          </a>
         </div>
       </div>
     </div>
