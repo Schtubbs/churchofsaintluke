@@ -60,28 +60,103 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Fade-in-on-scroll using IntersectionObserver
-  const fadeElements = document.querySelectorAll('.fade-in');
+  /* ============================================================
+     SCROLL-REVEAL WITH STAGGERED CARDS
+     ============================================================ */
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
 
-  if (fadeElements.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    // All selectors that get the reveal treatment
+    const REVEAL_SELECTORS = [
+      '.section-label',
+      '.section-heading-reveal',
+      '.section-sub-reveal',
+      '.gold-rule-reveal',
+      '.parish-card',
+      '.quick-card',
+      '.team-card',
+      '.footer-col',
+      '.schedule-grid > div',
+      'section.section h2',
+      'section.section p.section-subtitle',
+      '.mass-schedule-box',
+      '.contact-sidebar',
+    ].join(',');
+
+    // Parents whose direct children should stagger
+    const STAGGER_PARENTS = [
+      '.parish-cards-grid',
+      '.schedule-grid',
+      '.footer-content',
+    ];
+
+    // Mark elements for reveal (skip hero — those use CSS keyframes)
+    document.querySelectorAll(REVEAL_SELECTORS).forEach(function (el) {
+      if (el.closest('.hero') || el.closest('.page-hero')) return;
+      el.classList.add('reveal');
+    });
+
+    // Apply stagger delay classes to siblings inside stagger parents
+    STAGGER_PARENTS.forEach(function (parentSel) {
+      document.querySelectorAll(parentSel).forEach(function (parent) {
+        const children = Array.from(parent.children);
+        children.forEach(function (child, i) {
+          child.classList.add('reveal');
+          const delayClass = 'd' + Math.min(i + 1, 6);
+          child.classList.add(delayClass);
+        });
+      });
+    });
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          // Calculate delay based on position in container
-          const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 0.1;
-          entry.target.style.animationDelay = delay + 's';
-          entry.target.style.opacity = '1';
+          entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
     }, {
-      threshold: 0.1
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
     });
 
-    fadeElements.forEach(el => {
+    document.querySelectorAll('.reveal').forEach(function (el) {
       observer.observe(el);
     });
-  }
+
+    // Also animate footer cols on scroll
+    const footerCols = document.querySelectorAll('.footer-col');
+    const footerObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          footerObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    footerCols.forEach(function (col) { footerObserver.observe(col); });
+  })();
+
+  /* ============================================================
+     HERO VIDEO PARALLAX (index.html only)
+     ============================================================ */
+  (function () {
+    const video = document.querySelector('.hero video');
+    if (!video) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          const offset = window.scrollY * 0.3;
+          video.style.transform = 'translateY(' + offset + 'px)';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
 
   // Scroll down arrow animation
   const scrollArrow = document.querySelector('.scroll-arrow');
