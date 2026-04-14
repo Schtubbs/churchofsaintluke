@@ -284,6 +284,9 @@
 
         <!-- Vinny D's New York Deli & Catering -->
         <div class="sponsor-card reveal d1">
+          <div class="sponsor-img-wrap">
+            <img src="images/vinnyD's.jpg" alt="Vinny D's New York Deli and Catering" loading="lazy">
+          </div>
           <div class="sponsor-category">Dining &amp; Catering</div>
           <h4 class="sponsor-name">Vinny D's New York Deli &amp; Catering</h4>
           <p class="sponsor-desc">Dine-in, take-out &amp; catering. We bring the tastes of New York with the serenity of the Poconos.</p>
@@ -297,6 +300,9 @@
 
         <!-- Massage Academy of the Poconos -->
         <div class="sponsor-card reveal d2">
+          <div class="sponsor-img-wrap">
+            <img src="images/massageacademy.jpg" alt="Massage Academy of the Poconos" loading="lazy">
+          </div>
           <div class="sponsor-category">Health &amp; Wellness</div>
           <h4 class="sponsor-name">Massage Academy of the Poconos, LLC</h4>
           <p class="sponsor-desc">Professional massage at affordable prices. Massage, facial &amp; spa parties. Online bookings &amp; gift certificates. Services starting at $45.</p>
@@ -309,6 +315,9 @@
 
         <!-- The Getz Personal Care Home -->
         <div class="sponsor-card reveal d3">
+          <div class="sponsor-img-wrap">
+            <img src="images/getz.jpg" alt="The Getz Personal Care Home" loading="lazy">
+          </div>
           <div class="sponsor-category">Personal Care</div>
           <h4 class="sponsor-name">The Getz Personal Care Home</h4>
           <p class="sponsor-desc">Providing a loving, caring home for over 50 years. Rates from $3,000–$3,400/mo. Includes basic care, laundry, housekeeping, medication management, cable and more.</p>
@@ -321,6 +330,9 @@
 
         <!-- KMB Plumbing, Electrical & HVAC -->
         <div class="sponsor-card reveal d4">
+          <div class="sponsor-img-wrap">
+            <img src="images/kmbplumbing.jpg" alt="KMB Plumbing Electrical and HVAC" loading="lazy">
+          </div>
           <div class="sponsor-category">Plumbing, Electrical &amp; HVAC</div>
           <h4 class="sponsor-name">KMB Plumbing, Electrical &amp; HVAC</h4>
           <p class="sponsor-desc">24-Hour emergency service. Fully licensed &amp; insured. Residential &amp; commercial plumbing, electrical, and HVAC. Work 100% guaranteed.</p>
@@ -332,6 +344,9 @@
 
         <!-- Mallory's Army Foundation -->
         <div class="sponsor-card reveal d1">
+          <div class="sponsor-img-wrap">
+            <img src="images/mallory's.jpg" alt="Mallory's Army Foundation" loading="lazy">
+          </div>
           <div class="sponsor-category">Nonprofit</div>
           <h4 class="sponsor-name">Mallory's Army Foundation</h4>
           <p class="sponsor-desc">United together in the fight against bullying. Don't just teach kindness — BE KINDNESS!</p>
@@ -344,6 +359,9 @@
 
         <!-- Advertise Here CTA Card -->
         <div class="sponsor-card sponsor-cta-card reveal d2">
+          <div class="sponsor-img-wrap">
+            <img src="images/callustoplaceyouradonthispage.jpg" alt="Advertise in our bulletin" loading="lazy">
+          </div>
           <div class="sponsor-category">Advertise With Us</div>
           <h4 class="sponsor-name">Want Your Business Here?</h4>
           <p class="sponsor-desc">Support our parish community by advertising in our weekly bulletin. Reach hundreds of local families every week.</p>
@@ -466,6 +484,32 @@
 
       .sponsor-contact a:hover {
         color: var(--gold);
+      }
+
+      .sponsor-img-wrap {
+        width: calc(100% + 48px);
+        margin: -28px -24px 16px -24px;
+        height: 160px;
+        overflow: hidden;
+        border-radius: 4px 4px 0 0;
+        flex-shrink: 0;
+      }
+
+      .sponsor-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.55s cubic-bezier(.22,.61,.36,1);
+      }
+
+      .sponsor-card:hover .sponsor-img-wrap img {
+        transform: scale(1.06);
+      }
+
+      /* CTA card image — slightly dimmed so text contrast stays readable */
+      .sponsor-cta-card .sponsor-img-wrap img {
+        filter: brightness(0.55) saturate(0.8);
       }
 
       @media (max-width: 900px) {
