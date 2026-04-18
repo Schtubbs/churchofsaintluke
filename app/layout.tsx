@@ -5,7 +5,6 @@ import { LangProvider } from "./components/LangProvider";
 import { NextMassBar } from "./components/NextMassBar";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
-import { MobileLangToggle } from "./components/MobileLangToggle";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -48,7 +47,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${cormorant.variable} ${spectral.variable} ${inter.variable}`}>
       <body>
         <LangProvider>
-          <MobileLangToggle />
           <NextMassBar />
           <SiteHeader />
           {children}

@@ -19,6 +19,7 @@ function Crest() {
 export function SiteHeader() {
   const { t } = useLang();
   const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,10 +38,25 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  const closeMobile = () => setMobileOpen(false);
+
   return (
     <header className="site">
       <div className="wrap row">
-        <Link href="/" className="brand">
+        <Link href="/" className="brand" onClick={closeMobile}>
           <Crest />
           <span>
             <div className="name">{t("brand.name")}</div>
@@ -88,6 +104,52 @@ export function SiteHeader() {
             {t("nav.give")}
           </Link>
         </nav>
+
+        <button
+          className={`burger ${mobileOpen ? "open" : ""}`}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-sheet"
+          onClick={() => setMobileOpen((v) => !v)}
+          type="button"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      <div
+        id="mobile-sheet"
+        className={`mobile-sheet ${mobileOpen ? "open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!mobileOpen}
+      >
+        <nav className="mobile-nav">
+          <Link href="/#mass" onClick={closeMobile}>{t("nav.mass")}</Link>
+          <Link href="/sacraments" onClick={closeMobile}>{t("nav.sacraments")}</Link>
+          <Link href="/ministries" onClick={closeMobile}>{t("nav.ministries")}</Link>
+          <Link href="/faith-formation" onClick={closeMobile}>{t("nav.faith")}</Link>
+          <Link href="/our-team" onClick={closeMobile}>{t("nav.story")}</Link>
+          <Link href="/news" onClick={closeMobile}>{t("nav.news")}</Link>
+          <Link href="/gallery" onClick={closeMobile}>{t("nav.gallery")}</Link>
+          <Link href="/contact" onClick={closeMobile}>{t("nav.contact")}</Link>
+          <a
+            href="https://www.facebook.com/churchofsaintluke"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMobile}
+          >
+            {t("nav.live")}
+          </a>
+        </nav>
+        <div className="mobile-sheet-foot">
+          <LangToggle />
+          <Link className="btn gold" href="/giving" onClick={closeMobile}>
+            {t("nav.give")}
+          </Link>
+        </div>
       </div>
     </header>
   );

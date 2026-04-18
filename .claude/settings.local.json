@@ -16,7 +16,18 @@
       "Bash(tar -xf raw.bin)",
       "Bash(mkdir -p /Users/michalbienias/Documents/Projects/churchofsaintluke/public)",
       "Bash(mv /Users/michalbienias/Documents/Projects/churchofsaintluke/images /Users/michalbienias/Documents/Projects/churchofsaintluke/public/images)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(vercel whoami *)",
+      "Bash(vercel projects *)",
+      "mcp__plugin_vercel-plugin_vercel__list_teams",
+      "mcp__plugin_vercel-plugin_vercel__get_project",
+      "Bash(wait)",
+      "Bash(pkill -f \"next build\")",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(npm run *)",
+      "Bash(npm install *)"
     ]
   }
 }
