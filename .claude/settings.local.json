@@ -27,7 +27,10 @@
       "Bash(pkill -f \"next build\")",
       "Bash(pkill -f \"next dev\")",
       "Bash(npm run *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(curl -s https://churchofsaintluke.vercel.app/)",
+      "WebFetch(domain:www.churchofsaintluke.org)",
+      "Bash(npx tsc *)"
     ]
   }
 }
